@@ -2,34 +2,15 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Globe, Lock, Truck, Users, Zap, Clock, Bell, Shield, Layers, BarChart, FileText } from "lucide-react"
+import { Globe, Lock,  Users, Zap, Clock, Bell, Shield, Layers, BarChart, FileText } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { Footer } from "./footer"
+import Navbar from "./Navbar"
 
 export function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center border-b">
-        <Link className="flex items-center justify-center" href="#">
-          <Truck className="h-6 w-6 " />
-          <span className="ml-2 text-lg font-bold">SecureChain</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-            Features
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#additional-features">
-            Additional Features
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#benefits">
-            Benefits
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#testimonials">
-            Testimonials
-          </Link>
-        </nav>
-      </header>
+      <Navbar/>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-primary text-primary-foreground">
           <div className="container px-4 md:px-6">
@@ -62,7 +43,7 @@ export function LandingPage() {
               <Card>
                 <CardHeader>
                   <Zap className="w-8 h-8 text-primary mb-2" />
-                  <CardTitle>Real-Time Tracking</CardTitle>
+                  <Link href={"/realtimetracking"}><CardTitle>Real-Time Tracking</CardTitle></Link>
                 </CardHeader>
                 <CardContent>
                   Monitor every step of your product's journey with real-time updates. From production to doorstep delivery, track its location and status at any time.
